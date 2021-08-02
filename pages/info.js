@@ -11,8 +11,23 @@ const page = () => {
 
   return (
     <div>
-      <h1>{capsule.name}</h1>
-      <h3>{capsule.founder}</h3>
+      <h1 className="infoTitle">{capsule.name}</h1>
+      <div className="infoContent">
+        <h3>Founder: {capsule.founder}</h3>
+        <h3>Founded: {capsule.founded}</h3>
+        <h3>Employees: {capsule.employees}</h3>
+        <h3>CEO: {capsule.ceo}</h3>
+        <h3>CTO: {capsule.cto}</h3>
+        <h3>COO: {capsule.coo}</h3>
+        <h3>Valuation: {capsule.valuation}</h3>
+        {/* <h3>Headquarters: {capsule.headquarters.address}, {capsule.headquarters.city}, {capsule.headquarters.state}</h3> */}
+        <h2>Links:</h2>
+        {/* <h3>Website: {capsule.links.website}</h3> */}
+        {/* <h3>Flickr: {capsule.links.flickr}</h3> */}
+        {/* <h3>Twitter: {capsule.links.twitter}</h3> */}
+        {/* <h3>Elons Twitter: {capsule.links.elon_twitter}</h3> */}
+        <h3>Summary: {capsule.summary}</h3>
+      </div>
     </div>
   );
 };
