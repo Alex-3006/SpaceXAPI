@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import Link from 'next/link';
 
 const page = () => {
   const [capsule, setCapsule] = useState([]);
@@ -19,8 +20,9 @@ const page = () => {
             <h3>Type: {element.ship_type}</h3>
             <h3>Roles: {element.roles}</h3>
             <h3>Home port: {element.home_port}</h3>
-            <h3>URL: {element.url}</h3>
+            {element.url != null && <h2>Link:</h2>}
             {/* <h3>Images: {element.image}</h3> */}
+            {element.url != null && <Link href={element.url}><h3>URL: <span id="Link">{element.url}</span></h3></Link>}
           </div>
         ))}
       </div>

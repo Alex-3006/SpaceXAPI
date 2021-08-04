@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import Link from 'next/link';
 
 const page = () => {
   const [capsule, setCapsule] = useState([]);
@@ -15,13 +16,13 @@ const page = () => {
       <div className="content">
         {capsule.map((element) => (
           <div key={element.id} className="contentGrid">
-            <h3>Title: {element.title}</h3>
-            <h4>Date: {element.event_date_utc}</h4>
-            <h4>Details: {element.details}</h4>
-            <h3>Links:</h3>
-            {element.links.reddit != null && <h4>Reddit: {element.links.reddit}</h4>}
-            {element.links.article != null && <h4>Article: {element.links.article}</h4>}
-            {element.links.wikipedia != null && <h4>Wikipedia: {element.links.wikipedia}</h4>}
+            <h2>Title: {element.title}</h2>
+            <h3>Date: {element.event_date_utc}</h3>
+            <h3>Details: {element.details}</h3>
+            {(element.links.reddit != null || element.links.article != null || element.links.wikipedia != null) && <h2>Links:</h2>}
+            {element.links.reddit != null && <Link href={element.links.reddit}><h3>Reddit: <span id="Link">{element.links.reddit}</span></h3></Link>}
+            {element.links.article != null && <Link href={element.links.article}><h3>Article: <span id="Link">{element.links.article}</span></h3></Link>}
+            {element.links.wikipedia != null && <Link href={element.links.wikipedia}><h3>Wikipedia: <span id="Link">{element.links.wikipedia}</span></h3></Link>}
           </div>
         ))}
       </div>

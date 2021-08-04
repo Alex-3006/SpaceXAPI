@@ -48,6 +48,10 @@ body {
   border: 1px black dotted;
 }
 
+#Link:hover {
+  color: #1a0dab;
+}
+
 .infoTitle {
   margin-left: 10%;
 }
